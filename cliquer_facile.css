@@ -6,8 +6,9 @@ body {
     color: #01257D;
     display: flex;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh; /* hauteur min pour mobiles */
     box-sizing: border-box;
+    flex-direction: column; /* mieux sur mobile */
 }
 
 /* Navbar */
@@ -29,6 +30,7 @@ body {
     gap: 50px;
     margin: 0;
     padding: 0;
+    flex-wrap: wrap; /* pour les petits écrans */
 }
 
 .navbar a {
@@ -59,7 +61,8 @@ body {
     display: flex;
     gap: 20px;
     justify-content: center;
-    margin-bottom: 30px;  /* un peu d’espace sous les boutons */
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* pour que les boutons passent à la ligne */
 }
 
 .btn1, .btn2, .btn3, .btn4 {
@@ -73,49 +76,26 @@ body {
     transition: transform 0.2s ease;
     text-decoration-line: none;
     margin-top: 20px;
+    white-space: nowrap; /* évite que le texte casse */
 }
 
-.btn1 {
-    background-color: rgb(70, 255, 86);
-}
+.btn1 { background-color: rgb(70, 255, 86); }
+.btn1:hover { background-color: #00c600; }
 
-.btn1:hover {
-    transform: scale(1.05);
-    background-color: #00c600;
-}
+.btn2 { background-color: rgb(233, 233, 0); }
+.btn2:hover { background-color: rgb(176, 176, 0); }
 
-.btn2 {
-    background-color: rgb(233, 233, 0);
-}
+.btn3 { background-color: rgb(255, 17, 17); }
+.btn3:hover { background-color: rgb(207, 0, 0); }
 
-.btn2:hover {
-    transform: scale(1.05);
-    background-color: rgb(176, 176, 0);
-}
-
-.btn3 {
-    background-color: rgb(255, 17, 17);
-}
-
-.btn3:hover {
-    transform: scale(1.05);
-    background-color: rgb(207, 0, 0);
-}
-
-.btn4 {
-    background-color: rgb(194, 0, 39);
-}
-
-.btn4:hover {
-    transform: scale(1.05);
-    background-color: #680000;
-}
+.btn4 { background-color: rgb(194, 0, 39); }
+.btn4:hover { background-color: #680000; }
 
 h1 {
     padding: 0;
     margin-top: 0;
     font-size: 40px;
-    text-align: center;  /* centre le titre */
+    text-align: center;
     margin-bottom: 30px;
 }
 
@@ -142,14 +122,13 @@ h1 {
     background-color: #0050c7;
 }
 
-/* Nouveau : style pour la zone de stats temps + score */
 .stats {
     text-align: center;
     font-size: 24px;
     margin-bottom: 20px;
     font-weight: bold;
     color: #01257D;
-    user-select: none;  /* empêche de sélectionner le texte par erreur */
+    user-select: none;
 }
 
 .retry {
@@ -171,4 +150,78 @@ h1 {
 
 .retry_button:hover {
     background-color: #00c71b;
+}
+
+/* MEDIA QUERIES POUR RESPONSIVE */
+
+@media (max-width: 768px) {
+    .navbar ul {
+        gap: 20px;
+    }
+    .navbar a {
+        font-size: 16px;
+        padding: 5px 8px;
+    }
+    h1 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+    .niveau {
+        gap: 15px;
+    }
+    .btn1, .btn2, .btn3, .btn4 {
+        padding: 10px 20px;
+        font-size: 14px;
+        margin-top: 15px;
+    }
+    .button {
+        height: 150px;
+        width: 150px;
+        font-size: 32px;
+    }
+    .stats {
+        font-size: 20px;
+    }
+    .retry_button {
+        padding: 10px 25px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .niveau {
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+    .btn1, .btn2, .btn3, .btn4 {
+        width: 100%;
+        padding: 12px 0;
+        font-size: 16px;
+        margin-top: 12px;
+        border-radius: 8px;
+    }
+    h1 {
+        font-size: 28px;
+        margin-bottom: 15px;
+        padding: 0 10px;
+    }
+    .button {
+        height: 120px;
+        width: 120px;
+        font-size: 28px;
+    }
+    .stats {
+        font-size: 18px;
+        padding: 0 10px;
+    }
+    .retry_button {
+        width: 100%;
+        padding: 12px 0;
+        font-size: 16px;
+    }
 }

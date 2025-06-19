@@ -1,9 +1,10 @@
 body {
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color:  #e6f9ff; /* fond bleu clair */
+    background-color:  #e6f9ff;
     color: #01257D;
     max-height: 100vh;
+    box-sizing: border-box;
 }
 
 /* NAVBAR */
@@ -24,6 +25,7 @@ body {
     gap: 50px;
     margin: 0;
     padding: 0;
+    flex-wrap: wrap; /* pour que ça passe bien sur mobile */
 }
 
 .navbar a {
@@ -59,6 +61,7 @@ body {
     flex-wrap: nowrap;
 }
 
+/* Texte */
 .texte {
     max-width: 600px;
 }
@@ -69,8 +72,54 @@ body {
     color: #01257D;
 }
 
+/* Photo */
 .photo {
     max-width: 300px;
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* --- MEDIA QUERIES --- */
+@media (max-width: 768px) {
+    .moi {
+        padding: 40px 20px;
+        gap: 40px;
+    }
+    .texte {
+        max-width: 100%;
+    }
+    .presentation {
+        font-size: 16px;
+    }
+    .photo {
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .moi {
+        flex-direction: column;
+        padding: 20px 10px;
+        gap: 25px;
+        align-items: center;
+    }
+    .texte {
+        max-width: 100%;
+        text-align: center;
+    }
+    .presentation {
+        font-size: 15px;
+    }
+    .photo {
+        max-width: 200px;
+        width: 100%;
+        height: auto;
+    }
+    .navbar ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .navbar a {
+        font-size: 16px;
+    }
 }

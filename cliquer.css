@@ -1,13 +1,15 @@
 /* Style général */
 body {
     margin: 0;
-    padding-top: 60px; /* pour laisser la place à la navbar fixe */
+    padding-top: 60px; /* place pour navbar fixe */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: #e6f9ff; /* fond clair */
+    background-color: #e6f9ff;
     color: #01257D;
     display: flex;
     justify-content: center;
     max-height: 100vh;
+    box-sizing: border-box;
+    flex-direction: column; /* pour empiler proprement sur mobile */
 }
 
 /* Navbar */
@@ -29,6 +31,7 @@ body {
     gap: 50px;
     margin: 0;
     padding: 0;
+    flex-wrap: wrap; /* pour petits écrans */
 }
 
 .navbar a {
@@ -60,6 +63,7 @@ body {
     flex-direction: column;
     align-items: center;
     margin-top: 50px;
+    padding: 0 20px; /* un peu de marge intérieure */
 }
 
 .text {
@@ -69,10 +73,12 @@ body {
     margin-bottom: 30px;
 }
 
+/* Niveau boutons */
 .niveau {
     display: flex;
     gap: 20px;
     justify-content: center;
+    flex-wrap: wrap; /* pour que ça aille à la ligne sur petits écrans */
 }
 
 .btn1, .btn2, .btn3, .btn4 {
@@ -85,45 +91,79 @@ body {
     cursor: pointer;
     transition: transform 0.2s ease;
     text-decoration-line: none;
+    white-space: nowrap; /* évite que le texte casse */
+    margin-top: 10px;
 }
 
-.btn1 {
-    background-color: rgb(70, 255, 86);
-}
+.btn1 { background-color: rgb(70, 255, 86); }
+.btn1:hover { transform: scale(1.05); background-color: #00c600; }
 
-.btn1:hover {
-    transform: scale(1.05);
-    background-color: #00c600;
-}
+.btn2 { background-color: rgb(233, 233, 0); }
+.btn2:hover { transform: scale(1.05); background-color: rgb(176, 176, 0); }
 
-.btn2 {
-    background-color: rgb(233, 233, 0);
-}
+.btn3 { background-color: rgb(255, 17, 17); }
+.btn3:hover { transform: scale(1.05); background-color: rgb(207, 0, 0); }
 
-.btn2:hover {
-    transform: scale(1.05);
-    background-color: rgb(176, 176, 0);
-}
-
-.btn3 {
-    background-color: rgb(255, 17, 17);
-}
-
-.btn3:hover {
-    transform: scale(1.05);
-    background-color: rgb(207, 0, 0);
-}
-
-.btn4 {
-    background-color: rgb(194, 0, 39);
-}
-.btn4:hover {
-    transform: scale(1.05);
-    background-color: #680000;
-}
+.btn4 { background-color: rgb(194, 0, 39); }
+.btn4:hover { transform: scale(1.05); background-color: #680000; }
 
 h1 {
     padding: 0;
     margin-top: 0;
     font-size: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* MEDIA QUERIES POUR RESPONSIVE */
+
+@media (max-width: 768px) {
+    .navbar ul {
+        gap: 25px;
+    }
+    .navbar a {
+        font-size: 16px;
+        padding: 5px 8px;
+    }
+    h1 {
+        font-size: 32px;
+    }
+    .text {
+        font-size: 18px;
+        max-width: 90%;
+    }
+    .niveau {
+        gap: 15px;
+    }
+    .btn1, .btn2, .btn3, .btn4 {
+        padding: 10px 25px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 10px;
+    }
+    .niveau {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .btn1, .btn2, .btn3, .btn4 {
+        width: 100%;
+        padding: 12px 0;
+        font-size: 16px;
+        margin-top: 12px;
+        border-radius: 8px;
+    }
+    h1 {
+        font-size: 28px;
+        margin-bottom: 15px;
+        padding: 0 10px;
+    }
+    .text {
+        font-size: 16px;
+    }
 }

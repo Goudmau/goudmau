@@ -192,3 +192,82 @@ body {
     margin-bottom: 20px;
 }
 
+/* RESPONSIVE */
+
+/* Tablettes et petits écrans */
+@media (max-width: 768px) {
+  body {
+    padding-top: 80px;
+  }
+  .carte {
+    width: 90vw;        /* Presque toute la largeur de l’écran */
+    height: auto;       /* Pour que la hauteur s’adapte */
+    padding: 20px;
+    margin-top: 80px;
+  }
+  .number {
+    width: 90%;
+    max-width: none;
+    font-size: 16px;
+  }
+  .button, .retry_btn {
+    width: 90%;
+    max-width: none;
+    font-size: 20px;
+    height: 50px;
+  }
+  .btn1, .btn2, .btn3 {
+    padding: 10px 20px;
+    font-size: 14px;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-top: 20px;
+  }
+  .timer {
+    font-size: 20px;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 480px) {
+  body {
+    padding-top: 70px;
+  }
+  .carte {
+    width: 95vw;
+    padding: 15px;
+    margin-top: 70px;
+  }
+  .number {
+    font-size: 16px;
+    height: 35px;
+  }
+  .button, .retry_btn {
+    font-size: 18px;
+    height: 45px;
+  }
+  .btn1, .btn2, .btn3 {
+    width: 100%;          /* Pleine largeur pour toucher facilement */
+    padding: 12px 0;
+    font-size: 16px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 15px;
+    border-radius: 12px;
+    display: block;
+  }
+  .timer {
+    font-size: 18px;
+  }
+  /* Navbar vertical sur mobile */
+  .navbar ul {
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 10px;
+  }
+  .navbar a {
+    font-size: 16px;
+  }
+}
+
+
