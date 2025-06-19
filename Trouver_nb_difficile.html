@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nombre Mystère</title>
+    <link rel="stylesheet" href="Trouver_nb_difficile.css" />
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="Trouver_nb.html">Nombre mystère</a></li>
+                <li><a href="cliquer.html">Cliquer</a></li>
+                <li><a href="">Autre</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="niveau">
+        <a href="Trouver_nb.html" class="btn3">Retour</a>
+        <a href="Trouver_nb_facile.html" class="btn1">Facile</a>
+        <a href="Trouver_nb.html" class="btn2">Moyen</a>
+    </div>
+
+    <div class="carte">
+        <h1>Trouve le nombre</h1>
+        <div class="timer">Temps restant : <span id="temps">30</span> secondes</div>
+        <input type="text" class="number" placeholder="Entrer un chiffre entre 1 et 500 !" />
+        <p class="p">Fais une tentative !</p>
+        <p class="essaie">Nombre d'essais : 0</p>
+        <button class="button">Envoyer</button>
+    </div>
+
+    <div class="retry">
+        <button class="retry_btn">Réessayer</button>
+    </div>
+
+    <script src="Trouver_nb_difficile.js"></script>
+</body>
+</html>

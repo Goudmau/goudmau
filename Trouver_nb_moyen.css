@@ -1,0 +1,194 @@
+body {
+    margin: 0;
+    padding-top: 80px; /* pour laisser la place à la navbar */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #e6f9ff;
+    color: hsl(223, 98%, 25%);
+    display: flex;              /* passer de block à flex */
+    justify-content: center;    /* centrer horizontalement */
+    align-items: center;        /* centrer verticalement */
+    max-height: 100vh;
+    flex-direction: column;     /* au cas où, ça aide à empiler proprement */
+}
+
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #01257D;
+    font-weight: bold;
+    font-size: 18px;
+    position: relative;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background-color: #01257D;
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+/* Boîte du jeu */
+.carte {
+    background-color: #6D28D9;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: 70px;
+    width: 400px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Titre */
+.carte h1 {
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+/* Champ pour entrer le nombre */
+.number {
+    height: 40px;
+    width: 80%;
+    max-width: 300px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 20px;
+    border: none;
+    margin-bottom: 20px;
+}
+
+/* Texte d'indice */
+.p, .essaie {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* Bouton envoyer */
+.button {
+    width: 80%;
+    max-width: 250px;
+    height: 45px;
+    background-color: white;
+    color: black;
+    font-size: 25px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-top: 10px;
+    border: none;
+}
+
+.button:hover {
+    transform: scale(1.05);
+}
+
+.retry {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.retry_btn {
+    margin-top: 20px;
+    background-color: #7a0eff;
+    height: 60px;
+    width: 250px;
+    border-radius: 15px;
+    color: white;
+    text-shadow: none;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.retry_btn:hover{
+    transform: scale(1.1);
+}
+
+.btn1, .btn2, .btn3 {
+    background-color: #01257D;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    text-decoration-line: none;
+    padding: 12px 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 30px;
+}
+
+.btn1 {
+    background-color: rgb(70, 255, 86);
+    transition: transform color 0.03s ease-in;
+}
+
+.btn1:hover {
+    transform: scale(1.05);
+    background-color: #00c600;
+}
+
+.btn2 {
+    background-color: rgb(79, 53, 251);
+}
+
+.btn2:hover {
+    transform: scale(1.05);
+    background-color: #0003bf;
+}
+
+.btn3 {
+    background-color: rgb(255, 17, 17);
+}
+
+.btn3:hover {
+    transform: scale(1.05);
+    background-color: rgb(207, 0, 0);
+}
+
+.timer {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+

@@ -1,0 +1,174 @@
+body {
+    margin: 0;
+    padding-top: 60px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #e6f9ff;
+    color: #01257D;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #01257D;
+    font-weight: bold;
+    font-size: 18px;
+    position: relative;
+    padding: 5px 0;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background-color: #01257D;
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+.niveau {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 30px;  /* un peu d’espace sous les boutons */
+}
+
+.btn1, .btn2, .btn3, .btn4 {
+    background-color: #01257D;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    text-decoration-line: none;
+    margin-top: 20px;
+}
+
+.btn1 {
+    background-color: rgb(70, 255, 86);
+}
+
+.btn1:hover {
+    transform: scale(1.05);
+    background-color: #00c600;
+}
+
+.btn2 {
+    background-color: rgb(233, 233, 0);
+}
+
+.btn2:hover {
+    transform: scale(1.05);
+    background-color: rgb(176, 176, 0);
+}
+
+.btn3 {
+    background-color: rgb(255, 17, 17);
+}
+
+.btn3:hover {
+    transform: scale(1.05);
+    background-color: rgb(207, 0, 0);
+}
+
+.btn4 {
+    background-color: rgb(194, 0, 39);
+}
+
+.btn4:hover {
+    transform: scale(1.05);
+    background-color: #680000;
+}
+
+h1 {
+    padding: 0;
+    margin-top: 0;
+    font-size: 40px;
+    text-align: center;  /* centre le titre */
+    margin-bottom: 30px;
+}
+
+.bouton_cliquer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button {
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    background-color: #01257D;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 4px 8px rgba(1, 37, 125, 0.5);
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0050c7;
+}
+
+/* Nouveau : style pour la zone de stats temps + score */
+.stats {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #01257D;
+    user-select: none;  /* empêche de sélectionner le texte par erreur */
+}
+
+.retry {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.retry_button {
+    background-color: #00ff2a;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.retry_button:hover {
+    background-color: #00c71b;
+}
