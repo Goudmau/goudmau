@@ -53,8 +53,8 @@ button.addEventListener("click", function () {
     let valeur = Number(number.value);
     number.value = "";
 
-    if (valeur < 1 || valeur > 250) {
-        p.innerText = "Choisis un nombre entre 1 et 250 !";
+    if (valeur < 1 || valeur > 500) {
+        p.innerText = "Choisis un nombre entre 1 et 500 !";
     } else if (isNaN(valeur)) {
         p.innerText = "Veuillez entrer un nombre valide.";
     } else if (valeur > nombreMystere) {
@@ -81,7 +81,7 @@ retry.addEventListener("click", function () {
     compteur = 0;
     essaie.innerText = "Nombre d'essais : " + compteur;
 
-    nombreMystere = Math.floor(Math.random() * 250) + 1;
+    nombreMystere = Math.floor(Math.random() * 500) + 1;
     console.log("Nouveau nombre mystère :", nombreMystere);
 
     p.innerText = "";
