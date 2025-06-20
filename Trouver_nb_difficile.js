@@ -37,8 +37,8 @@ button.addEventListener("click", function () {
     }
 
     // 🚫 Nombre hors des limites autorisées
-    if (valeur1 < 1 || valeur1 > 100) {
-        alert("🚫 Tu dois entrer un nombre entre 1 et 100 !");
+    if (valeur1 < 1 || valeur1 > 500) {
+        alert("🚫 Tu dois entrer un nombre entre 1 et 500 !");
         number.value = "";
         return;
     }
